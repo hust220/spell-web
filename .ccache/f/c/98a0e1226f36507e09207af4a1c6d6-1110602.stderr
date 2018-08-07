@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/io/sql/src/TSQLFile.cxx: In member function ‘Bool_t TSQLFile::ReadConfigurations()’:
+/var/www/htdocs/spell/root1/root/io/sql/src/TSQLFile.cxx:1094:10: warning: variable ‘lock’ set but not used [-Wunused-but-set-variable]

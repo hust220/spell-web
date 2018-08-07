@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/hist/hist/src/TH1.cxx: In member function ‘virtual Double_t TH1::Chi2TestX(const TH1*, Double_t&, Int_t&, Int_t&, Option_t*, Double_t*) const’:
+/var/www/htdocs/spell/root1/root/hist/hist/src/TH1.cxx:1888:27: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]

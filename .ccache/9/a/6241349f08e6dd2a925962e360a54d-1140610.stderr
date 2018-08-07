@@ -1,0 +1,4 @@
+/var/www/htdocs/spell/root1/root/geom/geom/src/TGeoNavigator.cxx: In member function ‘void TGeoNavigator::SafetyOverlaps()’:
+/var/www/htdocs/spell/root1/root/geom/geom/src/TGeoNavigator.cxx:1663:17: warning: variable ‘current’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/geom/geom/src/TGeoNavigator.cxx: In member function ‘Bool_t TGeoNavigator::GotoSafeLevel()’:
+/var/www/htdocs/spell/root1/root/geom/geom/src/TGeoNavigator.cxx:2083:17: warning: variable ‘current’ set but not used [-Wunused-but-set-variable]

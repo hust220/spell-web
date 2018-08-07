@@ -1,0 +1,2 @@
+XS.c: In function ‘XS_Class__Load__XS_is_class_loaded’:
+XS.xs:100:14: warning: unused variable ‘found_method’ [-Wunused-variable]

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Simple MSA example">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<!--  <link type=text/css rel=stylesheet href=//cdn.biojs-msa.org/msa/latest/msa.min.gz.css /> -->
+<script src="https://cdn.bio.sh/msa/latest/msa.min.gz.js"></script> 
+<!-- <script src="https://cdn.bio.sh/msa/latest/msa.min.gz.js"></script> -->
+<!-- <script src="https://cdn.bio.sh/msa/1.0/msa.min.gz.js"></script> -->
+
+<div id="msa">Loading Multiple Alignment...</div>
+
+<script>
+
+
+var rootDiv = document.getElementById("msa");
+
+var m = msa({
+el: rootDiv,
+    vis: {
+      labelId: false
+  }
+});
+msa.io.clustal.read("https://raw.githubusercontent.com/wilzbach/msa/master/test/dummy/samples/p53.clustalo.clustal", 
+    function(err, seqs){
+m.seqs.reset(seqs);
+m.render();
+// var se = new msa.selection.columnsel({xStart: 2, xEnd: 4});
+m.g.selcol.add(new msa.selection.columnsel({xStart: 2, xEnd: 4}) );
+});
+
+
+
+
+
+
+  // just construct the msa component with your div element, the seqs and other properties
+//  var msa = new msa.vis.msa.msa({el: document.getElementById('msa'), seqs: seqs, zoomer: {labelWidth: 300}, vis: {conserv: false}, allowRectSelect : true }).render();
+
+//  var se = new msa.vis.msa.selection.columnsel({xStart: 2, xEnd: 4});
+//  msa.g.selcol.add(se);
+//});
+
+
+//var rootDiv = document.getElementById("msa");
+
+//var opts = {
+//  el: rootDiv,
+//  importURL: "./download/qRasGEF.clustal",
+//  zoomer: {
+//  }
+//};
+//var m = msa(opts);
+
+//m.g.selcol.reset();
+//alert("HHH");
+
+//var f = 100;
+
+
+ 
+//m.g.zoomer.setLeftOffset(f);
+//m.g.zoomer.set("setLeftOffset", "10");
+//m.render();
+
+//var t = new msa.selection.columnsel({ xStart: 6, xEnd: 10 });
+//var t = new msa.selection.columnsel({}); 
+
+
+//var t = new msa.columnsel({ xStart: 6, xEnd: 10 });
+//var t = new m.g.columnsel({ xStart: 6, xEnd: 10 });
+
+//m.g.zoomer._alignmentScrollLeft = 100;
+
+alert(m.g.Zoomer.gggg);
+alert(m.g.Zoomer.rowHeight);
+alert(m.g.Zoomer._alignmentScrollLeft);
+//m.g.selcol({xStart:6, xEnd:10});
+//var t = new msa.selection.columnsel({xStart:6,xEnd:10});
+//var t = new msa.ColumnSelection;
+//alert(m.g.selcol.length);
+
+//var t = new msa.selection.columnsel({xStart: 6, xEnd: 10});
+//alert("HHH");
+//m.g.selcol.add(t);
+
+//ColumnSelection();
+//alert("HELLO!");
+//var y = t.getLength();
+//alert("HELLO!");
+//alert("y");
+//var se = new msa.selection.selcol({xStart: 6, xEnd: 10});
+//m.g.selcol.add(se);
+
+// this is a way how you use a bundled file parser
+//biojs.io.clustal.read("https://raw.githubusercontent.com/wilzbach/msa/master/test/dummy/samples/p53.clustalo.clustal", function(seqs){
+  // just construct the msa component with your div element, the seqs and other properties
+//  var msa = new biojs.vis.msa.msa({el: document.getElementById('msa'), seqs: seqs, zoomer: {labelWidth: 300}, vis: {conserv: false}, allowRectSelect : true }).render()//;
+
+//  var se = new biojs.vis.msa.selection.selcol({xStart: 6, xEnd: 10});
+//  msa.g.selcol.add(se);
+//});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<head>
+	<title>
+	</title>
+	</head>
+	<body>
+	<p>
+	Chiron Webserver Terms of Use <br>
+	============================ <p>
+
+		The material contained within the Dokholyan Lab's Chiron Server (http://chiron.dokhlab.org) is copyright unless stated otherwise.<br>
+<p>
+		This website is restricted to non-profit uses only.<br>
+<p>
+		Much of the material provided via the online service may be reproduced free of charge for educational non-commercial purposes provided that the source is acknowledged and that it is reproduced accurately and not used in a misleading context. This permission does not extend to any material on the websites that is identified as being the copyright of a third party. You must obtain authorization to reproduce such material from the copyright holders concerned.<br>
+<p>
+		Should you wish to re-publish any of the Dokholyan Lab's copyrighted material from the Chiron server, please contact us to obtain permission.<br>
+<p>
+		Dokholyan Lab's webserver seeks to ensure that the information published on the Chiron webserver is up-to-date and accurate. However, the information on the websites does not constitute legal or professional advice and the Dokholyan Lab and the developers of Chiron cannot accept any liability for actions or consequences arising from its use. Dokholyan Lab cannot be held responsible for the contents of any other website accessed through a link on our site. Dokholyan Lab's Chiron webserver provides these services as a convenience and inclusion of a service does not imply endorsement by Dokholyan Lab's Chiron server of an external site. <br>
+<p>
+		Dokholyan Lab's Chiron webserver recognizes that your privacy is important and is committed to respecting the same. We will apply appropriate protection and management of any personally identifiable information you share with us. We will not pass on your details to any third party. <br>
+
+		</body>
+	</html>
+

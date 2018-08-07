@@ -1,0 +1,5 @@
+cint/cint/src/func.cxx: In function ‘G__value G__operatorfunction(G__value*, const char*, int*, G__FastAllocString&, const char*)’:
+cint/cint/src/func.cxx:911:8: warning: variable ‘base1’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/func.cxx:912:8: warning: variable ‘nindex’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/func.cxx: In function ‘G__value G__getfunction_libp(const char*, G__FastAllocString&, G__param*, int*, int)’:
+cint/cint/src/func.cxx:1054:28: warning: variable ‘p2ffpara’ set but not used [-Wunused-but-set-variable]

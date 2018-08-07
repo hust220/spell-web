@@ -1,0 +1,6 @@
+cint/cint/src/parse.cxx: In function ‘G__value G__exec_do()’:
+cint/cint/src/parse.cxx:2087:8: warning: variable ‘executed_continue’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/parse.cxx: In function ‘G__value G__exec_loop(const char*, char*, const std::list<G__FastAllocString>&)’:
+cint/cint/src/parse.cxx:2917:8: warning: variable ‘executed_continue’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/parse.cxx: In function ‘void G__externignore()’:
+cint/cint/src/parse.cxx:3864:8: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]

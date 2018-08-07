@@ -1,0 +1,5 @@
+cint/cint/src/stub.cxx: In function ‘void G__cppstub_memfunc(FILE*)’:
+cint/cint/src/stub.cxx:331:7: warning: variable ‘isconstructor’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/stub.cxx:331:21: warning: variable ‘iscopyconstructor’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/stub.cxx:331:39: warning: variable ‘isdestructor’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/stub.cxx:331:52: warning: variable ‘isassignmentoperator’ set but not used [-Wunused-but-set-variable]

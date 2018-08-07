@@ -1,0 +1,41 @@
+<!-- Format 
+<h3>
+	<a href="#">
+		Question
+	</a>
+</h3>
+
+<div>
+	<p>
+		Answer
+	</p>
+</div>
+-->
+<h3><a href="#">What is Chiron?</a></h3>
+<div>
+	<p>Named after the Thessalian god of healing, Chiron is a server that rapidly minimizes steric clashes in proteins using short discrete molecular dynamics(DMD) simulations.</p>
+</div>
+
+<h3><a href="#">How do I cite Chiron?</a></h3>
+<div>
+	<p>
+		Please cite : <strong>Ramachandran, S., Kota, P., Ding, F. and Dokholyan, N. V., <i>PROTEINS: Structure, Function and Bioinformatics,</i> 79: 261-270 (2011)</strong>
+	</p>
+</div>
+
+<h3><a href="#">What is a steric clash?</a></h3>
+<div>
+	<p>Any atomic overlap resulting in Van der Waal&#39;s repulsion energy greater than 0.3 kcal/mol (0.5 k<sub>B</sub>T) except in the following cases:<ol><li>When the atoms are bonded</li><li>When the atoms form a hydrogen bond (The heavy atoms involved in the hydrogen bond, we assign the Van der Waal&#39;s radius of hydrogen to be zero)</li><li>When the atoms involved are backbone atoms and have separation of 2 residues.</li></ol> The Van der Waal&#39;s repulsion energy is calculated using CHARMM non-bonded parameters, which are identical to CNS parameters except for carboxyl oxygens.</p>
+</div>
+<h3><a href="#">Why care about steric clashes?</a></h3>
+<div>
+	<p>Steric clashes arise when there is unfavorable overlap of the electron clouds of two atoms. Proteins pack tight enough to avoid these clashes. Even though only limited amount of clashes are seen in high resolution crystal structures of proteins (probably to facilitate formation of hydrogen bonds and/or electrostatic interactions), many protein structures feature large number of clashes, either because of lack of resolution, or as side-effects of homology models. One would expect that while generating homology models, the probability of side-chain atoms clashing among themselves and with the backbone atoms increases upon changing side chain identities of the protein. In fact, we observe that the mean normalized clash energy of high-resolution crystal structures (2.5-3.5 &Aring;) is significantly higher than that for structures with resolution better than 2.5 &Aring;. In these cases, the clashes are not the property of the protein but rather an artifact of model building. To arrive at a more physical model in such cases, one would like to first identify these clashes and then remove them with minimum perturbation of the backbone.</p>
+</div>
+<h3><a href="#">How does Chiron remove clashes?</a></h3>
+<div>
+	<p>MD or DMD performed under physiological conditions with the structures having high clash energy would result in the protein rapidly unfolding. However, Chiron utilizes a high heat exchange rate of the solute (protein) with the bath in DMD simulations; thus rapidly quenching high velocities arising due to clashes. Using our simulation conditions and the inherent sampling power of DMD, Chiron employs an iterative protocol aimed at minimizing the given protein until it attains an &#39;acceptable clash score&#39;. Chiron rapidly minimizes clashes while at the same time causing minimal perturbation of the protein backbone. The resulting protein structure has normalized clash score that is comparable to high-resolution protein structures (&lt;2.5 &Aring;).</p>
+</div>
+<h3><a href="#">How did you arrive at the &#39;acceptable clash score&#39;?</a></h3>
+<div>
+	<p>We built a distribution of normalized clash-score using nearly 4300 single chain crystal structures at least 25 residues long and having resolution equal to or better than 2.5 &Aring;. A structure with normalized clash score less than one standard deviation away from the mean of the above distribution is said to have an acceptable clash score.</p>
+</div>

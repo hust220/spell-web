@@ -1,0 +1,4 @@
+cint/cint/src/loadfile.cxx: In function ‘int G__loadfile_tmpfile(FILE*)’:
+cint/cint/src/loadfile.cxx:991:7: warning: variable ‘store_return’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/loadfile.cxx: In function ‘int G__loadfile(const char*)’:
+cint/cint/src/loadfile.cxx:1423:7: warning: variable ‘external_compiler’ set but not used [-Wunused-but-set-variable]

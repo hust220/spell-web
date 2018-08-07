@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/core/rint/src/TRint.cxx: In member function ‘virtual Bool_t TRint::HandleTermInput()’:
+/var/www/htdocs/spell/root1/root/core/rint/src/TRint.cxx:548:14: warning: variable ‘added’ set but not used [-Wunused-but-set-variable]

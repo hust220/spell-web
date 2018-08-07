@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGTextEditor.cxx: In member function ‘virtual Bool_t TGTextEditor::HandleKey(Event_t*)’:
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGTextEditor.cxx:634:10: warning: variable ‘n’ set but not used [-Wunused-but-set-variable]

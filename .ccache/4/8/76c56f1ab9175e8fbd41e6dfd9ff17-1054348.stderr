@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/core/utils/src/rootcint.cxx: In function ‘void StrcpyWithEsc(std::string&, const char*)’:
+/var/www/htdocs/spell/root1/root/core/utils/src/rootcint.cxx:3942:11: warning: variable ‘k’ set but not used [-Wunused-but-set-variable]

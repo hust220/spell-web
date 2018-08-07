@@ -1,0 +1,524 @@
+<?php
+//	Filename : index.php
+
+require('config/config.inc.php');
+require('config/functions.inc.php');
+
+?>
+<?php
+	if (empty($_SESSION['username'])){
+		header("Location: login.php");
+	}
+?>
+<html>
+<?
+	include("txt/head.txt");
+	if($_SESSION[ 'username'] == "guest") { 
+		echo "<div class=hspacer50></div>";
+		echo "<strong style='color:#990000;'>We are sorry ! Guest users do not have access to this page. Please register to gain access.</strong>";
+	} else {
+?>
+	<div id="content">
+		<div id="nav">
+			<?
+				include("txt/menu.php");
+				include("txt/adminmenu.txt");
+			?>
+		</div>
+		
+		<div id="main_content">
+			<div class="indexTitle"> Overview </div>
+<?php
+	$userid = $_SESSION['userid'];
+	#---last login time-----
+//	$query = "SELECT tlogin FROM $tableusers WHERE id='$userid'";
+//	$result = mysql_query($query) or die("cannot connect database for user login time");
+//	$row = mysql_fetch_array($result);
+//	if ($row) {
+//		$tlogin = $row['tlogin'];
+//	}else{
+//		$tlogin = '0000-00-00 00:00:00';
+//	}
+	if (isset($_SESSION['tlogin']) ) {
+		$tlogin = $_SESSION['tlogin'];
+	} else {
+		$tlogin = '0000-00-00 00:00:00';
+	}
+
+	echo '<div class=hspacer10></div>';
+	echo '<div id="tabs">';
+	echo '	<ul>';
+	echo '	<li><a href="#chiron">Chiron</a></li>';
+	echo '	<li><a href="#gaia">Gaia</a></li>';
+	echo '	</ul>';
+	echo '	<div id="chiron" style="font-size: 0.9em;">';
+
+/*-----------------------------------------------------------------------------
+  This section of code queries the database and displays any pending or running
+  jobs for the current user of the tool.
+-----------------------------------------------------------------------------*/
+
+	$query="SELECT id,pdbid,title,status,message,tsubmit FROM $tablejobs WHERE created_by='$userid' AND minimize='1' AND tsubmit >= '$tlogin' AND status < '2' AND status >= '0' AND flag = '0'".
+	" ORDER by id DESC  ";
+	$result = mysql_query($query);
+	$nrows = mysql_num_rows($result);
+	$fields = array('Job ID','Job Title','Protein','Submitted at','Status','Action');
+	if($nrows > 0) {
+		echo '<div class="indexStatus">';
+		echo 'Your recent submissions.';
+		echo '</div>';
+		echo '<div align=center style="border:1px solid gray; padding: 1px 0px 1px 1px; margin: 3px 0px 3px 0px;">';
+		echo '<img src="style/img/waiting.png" title="Waiting for Submission..." border="0px"> &ndash; Waiting &nbsp;&nbsp;&nbsp; <img src="style/img/running.gif" title="Processing" border="0px" width=16 height=16> &ndash; Running &nbsp;&nbsp;&nbsp; <img src="style/img/done.png" title="Completed Successfully !" border="0px"> &ndash; Done &nbsp;&nbsp;&nbsp; <img src="style/img/failed.png" border="0px" title="Job Failed !"> &ndash; Failed';
+		echo '</div>';
+		
+		$result = mysql_query($query);
+		$nrow = mysql_num_rows($result);
+	
+		$page=0;$nlimit=20;
+		$offset = $page*$nlimit;
+		$query.="LIMIT $offset,$nlimit";
+		$result = mysql_query($query);
+		$tableheader = '<table class="queryTable" width=100%> <tbody id="tbodytag"> <tr class="queryTitle">';
+		foreach ($fields as $f):
+			$tableheader .= '<td>'.$f.'</td>';
+		endforeach;
+		$tableheader .= '</tr>';
+		echo "$tableheader";
+		while ( $row = mysql_fetch_array($result)){
+	
+			$jobid    = $row['id'];
+			$pdbid    = $row['pdbid'];
+			$title    = $row['title'];
+			$subat    = $row['tsubmit'];
+			$status   = $row['status'];
+			$message  = $row['message'];
+			//$harmonic = $row['harmonic'];
+
+			switch ($status) {
+				case 0:
+					$iconstr="<img src='style/img/waiting.png' title='Waiting for Submission...' border='0px'>";$statusstr="Waiting";break;
+				case 1:
+					$iconstr="<img src='style/img/running.gif' width=16 height=16 title='Processing...' border='0px'>";$statusstr="Running";break;
+				case 2:
+					$iconstr="<img src='style/img/done.png' title='Completed Successfully !' border='0px'>";$statusstr="Done";break;
+				case 3:
+					$iconstr="<img src='style/img/failed.png' title='Job Failed !' border='0px'>";$statusstr="Failed";break;
+			}
+
+			//$harmonicstr = ($harmonic==0) ? "<img src='style/img/no.png'>" : "<img src='style/img/yes.png'>";
+		
+			$haspdb = $row['!ISNULL(fpdb)'];
+			if ($haspdb) {
+				$pdbstr = "<a href='downloadpdb.php?id=$jobid'><img src='style/img/zipped.gif' title='download output pdb' border='0px'> </a>";
+//				$url = "loadPage(\"downloadpdb.php?id=$jobid\")";
+//				$pdbstr = "<img src='style/img/zipped.gif' title='download out pdb' onclick ='$url' style='cursor:pointer;' >";
+			}else{
+				$pdbstr = "";
+			}
+			$href = "javascript:delentry($jobid);";
+			$str = "<a href='$href'> <img src='style/img/remove.png' title='delete this entry' border='0px'> </a>";
+		
+			echo "<tr id='entrytag$jobid'>";
+			echo "<td>$jobid</td>";
+			echo "<td>$title </td>";
+			echo "<td>$pdbid </td>";
+			echo "<td>$subat </td>";
+			//echo "<td align=center>$harmonicstr </td>";
+			echo "<td>$iconstr</td>";
+			echo "<td> $str</td>";
+			echo "</tr>";
+		}
+		echo "</tbody></table>";
+	} else {
+	#----The user does not have any jobs pending or running at this time----
+		echo '<div class="indexStatus">';
+		echo 'You have no recent submissions.';
+		echo '</div>';
+	}
+
+?>
+	<br><br>
+<?php
+
+/*-------------------------------------------------------------------------
+  This section of code queries the database and displays any completed jobs
+  (including failed jobs) for the current user of the tool.
+-------------------------------------------------------------------------*/
+
+	#----Query database to check if the user has completed jobs----
+	$query="SELECT COUNT(*) AS jobcount FROM $tablejobs WHERE created_by='$userid' AND tsubmit >= '$tlogin' AND status >= '2' and flag = '0' AND minimize='1'";
+	$result = mysql_query($query);
+	while($row=mysql_fetch_array($result)) {
+		$nrows = $row['jobcount'];
+	}
+
+	#----The user has completed jobs. Display the results.----
+	if($nrows > 0) {
+		echo '<div class="indexStatus">';
+		echo 'Your recent results.';
+		echo '</div>';
+		echo '<div align=center style="border:1px solid gray; padding: 1px 0px 1px 1px; margin: 3px 0px 3px 0px;">';
+		echo '<img src="style/img/waiting.png" title="Waiting for Submission..." border="0px"> &ndash; Waiting &nbsp;&nbsp;&nbsp; <img src="style/img/running.gif" title="Processing" border="0px" width=16 height=16> &ndash; Running &nbsp;&nbsp;&nbsp; <img src="style/img/done.png" title="Completed Successfully !" border="0px"> &ndash; Done &nbsp;&nbsp;&nbsp; <img src="style/img/failed.png" border="0px" title="Job Failed !"> &ndash; Failed';
+		echo '</div>';
+		//myshowresults($query,$fields,0,20,"index.php?page");
+		$query = "SELECT $tableresults.*, $tablejobs.pdbid, $tablejobs.title, $tablejobs.status, $tablejobs.authKey FROM $tableresults LEFT JOIN $tablejobs ON (status='2' AND created_by='$userid' AND $tablejobs.id=$tableresults.jobid) WHERE userid='$userid' AND $tablejobs.minimize='1' AND $tablejobs.flag='0' ORDER BY $tableresults.jobid DESC";
+		$result = mysql_query($query);
+		$nrow = mysql_num_rows($result);
+
+		if($nrow>0) {
+			$page = 0;
+			$nlimit = 20;
+			$offset = $page*$nlimit;
+			//$query.=" LIMIT $offset,$nlimit";
+			$result = mysql_query($query);
+			$fields = array('Job ID','Job Title','Protein','<div style="line-height: 1.8">E<sub>Clash</sub><sup style="margin-left: -4ex">initial</sup> <small>(kcal/mol)</small></div>','<div style="line-height: 1.8">E<sub>Clash</sub><sup style="margin-left: -4ex">final</sup> <small>(kcal/mol)</small></div>','RMSD (&Aring;)','&tau; <small>(Real time)</small>','Status','Action');
+			$tableheader = '<table class="queryTable" width=100%> <tbody id="tbodytag"> <tr class="queryTitle">';
+			foreach ($fields as $f):
+				$tableheader .= '<td>'.$f.'</td>';
+			endforeach;
+			$tableheader .= '</tr>';
+			echo $tableheader;
+			while ( $row = mysql_fetch_array($result)){
+				$jobid   = $row['jobid'];
+				//$pdbid   = $row[''];
+				$title    = $row['title'];
+				$postat   = $row['tposted'];
+				$iclashe  = $row['iClashE'];
+				$fclashe  = $row['fClashE'];
+				$rmsd     = $row['rmsd'];
+				$runtime  = $row['runtime'];
+				$pdbid    = $row['pdbid'];
+				$authKey  = $row[ 'authKey'];
+				//$harmonic = $row['harmonic'];
+
+				$iconstr="<img src='style/img/done.png' title='Completed Successfully !' border='0px'>";
+				$statusstr="Done";
+
+				//$harmonicstr = ($harmonic==0) ? "<img src='style/img/no.png'>" : "<img src='style/img/yes.png'>";
+		
+				$haspdb = $row['!ISNULL(fpdb)'];
+				if ($haspdb) {
+					$pdbstr = "<a href='downloadpdb.php?id=$jobid'><img src='style/img/zipped.gif' title='download output pdb' border='0px'> </a>";
+//					$url = "loadPage(\"downloadpdb.php?id=$jobid\")";
+//					$pdbstr = "<img src='style/img/zipped.gif' title='download out pdb' onclick ='$url' style='cursor:pointer;' >";
+				}else{
+					$pdbstr = "";
+				}
+				$href = "javascript:delentry($jobid);";
+				$viewstr = "<a href='showresults.php?jobid=$jobid&authKey=$authKey&minimize=1'> <img src='style/img/view.png' title='view results' border='0px'> </a>";
+				//$pdbstr = "<a href='$href'> <img src='style/img/download.png' title='download files' border='0px'> </a>";
+				$str = "<a href='$href'> <img src='style/img/remove.png' title='delete this entry' border='0px'> </a>";
+		
+				echo "<tr id='entrytag$jobid'>";
+				echo "<td>$jobid</td>";
+				echo "<td> $title </td>";
+				echo "<td> $pdbid </td>";
+				//echo "<td align=center> $harmonicstr </td>";
+				//echo "<td> $postat </td>";
+				echo "<td> $iclashe </td>";
+				echo "<td> $fclashe </td>";
+				echo "<td> $rmsd </td>";
+				echo "<td> $runtime </td>";
+				echo "<td align=center>$iconstr</td>";
+				echo "<td> $viewstr $pdbstr $str</td>";
+				echo "</tr>";
+			}
+			echo "</tbody></table>";
+		}
+
+		#----Query for failed jobs----
+		$query = "SELECT * FROM $tablejobs WHERE created_by='$userid' AND status='3' AND minimize='1'";
+		$result = mysql_query($query);
+		$nrow = mysql_num_rows($result);
+
+		#----Check if any jobs have failed and display if they have----
+		if($nrow>0) {
+			$page = 0;
+			$nlimit = 20;
+			$offset = $page*$nlimit;
+			$query.="LIMIT $offset,$nlimit";
+			$result = mysql_query($query);
+			$fields = array("Job ID","Job Title","PDB ID","Submitted at","Status","Action");
+			$tableheader = '<table class="queryTable" width=100%> <tbody id="tbodytag"> <tr class="queryTitle">';
+			foreach ($fields as $f):
+				$tableheader .= '<td>'.$f.'</td>';
+			endforeach;
+			$tableheader .= '</tr>';
+			echo $tableheader;
+			while ( $row = mysql_fetch_array($result)){
+				$title    = $row['title'];
+				$jobid    = $row['id'];
+				$pdbid    = $row['pdbid'];
+				$subat    = $row['tsubmit'];
+				//$harmonic = $row['harmonic'];
+				//$message  = $row['message'];
+				$iconstr="<img src='style/img/failed.png' title='Job Failed !' border='0px'>";
+				$statusstr="Failed";
+				//$harmonicstr = ($harmonic==0) ? "<img src='style/img/no.png'>" : "<img src='style/img/yes.png'>";
+		
+				$href = "javascript:delentry($jobid);";
+				$str = "<a href='$href'> <img src='style/img/remove.png' title='delete this entry' border='0px'> </a>";
+		
+				echo "<tr id='entrytag$jobid'>";
+				echo "<td>$jobid</td>";
+				echo "<td>$title</td>";
+				echo "<td> $pdbid </td>";
+				echo "<td> $subat </td>";
+				//echo "<td align=center> $harmonicstr </td>";
+				echo "<td>$iconstr</td>";
+				//echo "<td> $message </td>";
+				echo "<td> $str</td>";
+				echo "</tr>";
+			}
+			echo "</tbody></table>";
+		}
+		
+	} else {
+	#----The user does not have completed or failed jobs recently----
+		echo '<div class="indexStatus">';
+		echo 'You have no recent results.';
+		echo '</div>';
+	}
+	echo '</div>';
+	echo '<div id="gaia" style="font-size: 0.9em">';
+
+/*-----------------------------------------------------------------------------
+  This section of code queries the database and displays any pending or running
+  jobs for the current user of the tool.
+-----------------------------------------------------------------------------*/
+
+	$query="SELECT id,pdbid,title,status,message,tsubmit FROM $tablejobs WHERE created_by='$userid' AND queue='gaia' AND tsubmit >= '$tlogin' AND status < '2' AND status >= '0' AND flag = '0'".
+	" ORDER by id DESC  ";
+	$result = mysql_query($query);
+	$nrows = mysql_num_rows($result);
+	$fields = array('Job ID','Job Title','Protein','Submitted at','Status','Action');
+	if($nrows > 0) {
+		echo '<div class="indexStatus">';
+		echo 'Your recent submissions.';
+		echo '</div>';
+		echo '<div align=center style="border:1px solid gray; padding: 1px 0px 1px 1px; margin: 3px 0px 3px 0px;">';
+		echo '<img src="style/img/waiting.png" title="Waiting for Submission..." border="0px"> &ndash; Waiting &nbsp;&nbsp;&nbsp; <img src="style/img/running.gif" title="Processing" border="0px" width=16 height=16> &ndash; Running &nbsp;&nbsp;&nbsp; <img src="style/img/done.png" title="Completed Successfully !" border="0px"> &ndash; Done &nbsp;&nbsp;&nbsp; <img src="style/img/failed.png" border="0px" title="Job Failed !"> &ndash; Failed';
+		echo '</div>';
+		
+		$result = mysql_query($query);
+		$nrow = mysql_num_rows($result);
+	
+		$page=0;$nlimit=20;
+		$offset = $page*$nlimit;
+		$query.="LIMIT $offset,$nlimit";
+		$result = mysql_query($query);
+		$tableheader = '<table class="queryTable" width=100%> <tbody id="tbodytag"> <tr class="queryTitle">';
+		foreach ($fields as $f):
+			$tableheader .= '<td>'.$f.'</td>';
+		endforeach;
+		$tableheader .= '</tr>';
+		echo "$tableheader";
+		while ( $row = mysql_fetch_array($result)){
+	
+			$jobid    = $row['id'];
+			$pdbid    = $row['pdbid'];
+			$title    = $row['title'];
+			$subat    = $row['tsubmit'];
+			$status   = $row['status'];
+			$message  = $row['message'];
+			//$harmonic = $row['harmonic'];
+
+			switch ($status) {
+				case 0:
+					$iconstr="<img src='style/img/waiting.png' title='Waiting for Submission...' border='0px'>";$statusstr="Waiting";break;
+				case 1:
+					$iconstr="<img src='style/img/running.gif' width=16 height=16 title='Processing...' border='0px'>";$statusstr="Running";break;
+				case 2:
+					$iconstr="<img src='style/img/done.png' title='Completed Successfully !' border='0px'>";$statusstr="Done";break;
+				case 3:
+					$iconstr="<img src='style/img/failed.png' title='Job Failed !' border='0px'>";$statusstr="Failed";break;
+			}
+
+			//$harmonicstr = ($harmonic==0) ? "<img src='style/img/no.png'>" : "<img src='style/img/yes.png'>";
+		
+			$haspdb = $row['!ISNULL(fpdb)'];
+			if ($haspdb) {
+				$pdbstr = "<a href='downloadpdb.php?id=$jobid'><img src='style/img/zipped.gif' title='download output pdb' border='0px'> </a>";
+//				$url = "loadPage(\"downloadpdb.php?id=$jobid\")";
+//				$pdbstr = "<img src='style/img/zipped.gif' title='download out pdb' onclick ='$url' style='cursor:pointer;' >";
+			}else{
+				$pdbstr = "";
+			}
+			$href = "javascript:delentry($jobid);";
+			$str = "<a href='$href'> <img src='style/img/remove.png' title='delete this entry' border='0px'> </a>";
+		
+			echo "<tr id='entrytag$jobid'>";
+			echo "<td>$jobid</td>";
+			echo "<td>$title </td>";
+			echo "<td>$pdbid </td>";
+			echo "<td>$subat </td>";
+			//echo "<td align=center>$harmonicstr </td>";
+			echo "<td>$iconstr</td>";
+			echo "<td> $str</td>";
+			echo "</tr>";
+		}
+		echo "</tbody></table>";
+	} else {
+	#----The user does not have any jobs pending or running at this time----
+		echo '<div class="indexStatus">';
+		echo 'You have no recent submissions.';
+		echo '</div>';
+	}
+
+?>
+	<br><br>
+<?php
+
+/*-------------------------------------------------------------------------
+  This section of code queries the database and displays any completed jobs
+  (including failed jobs) for the current user of the tool.
+-------------------------------------------------------------------------*/
+
+	#----Query database to check if the user has completed jobs----
+	$query="SELECT COUNT(*) AS jobcount FROM $tablejobs WHERE created_by='$userid' AND tsubmit >= '$tlogin' AND status >= '2' and flag = '0' AND queue='gaia'";
+	$result = mysql_query($query);
+	while($row=mysql_fetch_array($result)) {
+		$nrows = $row['jobcount'];
+	}
+
+	#----The user has completed jobs. Display the results.----
+	if($nrows > 0) {
+		echo '<div class="indexStatus">';
+		echo 'Your recent results.';
+		echo '</div>';
+		echo '<div align=center style="border:1px solid gray; padding: 1px 0px 1px 1px; margin: 3px 0px 3px 0px;">';
+		echo '<img src="style/img/waiting.png" title="Waiting for Submission..." border="0px"> &ndash; Waiting &nbsp;&nbsp;&nbsp; <img src="style/img/running.gif" title="Processing" border="0px" width=16 height=16> &ndash; Running &nbsp;&nbsp;&nbsp; <img src="style/img/done.png" title="Completed Successfully !" border="0px"> &ndash; Done &nbsp;&nbsp;&nbsp; <img src="style/img/failed.png" border="0px" title="Job Failed !"> &ndash; Failed';
+		echo '</div>';
+		echo '<div align=center style="border:1px solid gray; padding: 1px 0px 1px 1px; margin: 3px 0px 3px 0px;">';
+		echo 'HBS &ndash; Hydrogen bonds in the shell &nbsp;&nbsp;&nbsp; HBC &ndash; Hydrogen bonds in the core </br> MSA &ndash; Molecular Surface Area &nbsp;&nbsp;&nbsp; Voids &ndash; Internal cavities only';
+		echo '</div>';
+		//myshowresults($query,$fields,0,20,"index.php?page");
+		$query = "SELECT $gaia_results.*, $tablejobs.pdbid, $tablejobs.title, $tablejobs.status, $tablejobs.authKey FROM $gaia_results LEFT JOIN $tablejobs ON (status='2' AND created_by='$userid' AND $tablejobs.id=$gaia_results.jobid) WHERE userid='$userid' AND $tablejobs.queue='gaia' AND $tablejobs.flag='0' ORDER BY $gaia_results.jobid DESC";
+		$result = mysql_query($query);
+		$nrow = mysql_num_rows($result);
+
+		if($nrow>0) {
+			$page = 0;
+			$nlimit = 20;
+			$offset = $page*$nlimit;
+			//$query.=" LIMIT $offset,$nlimit";
+			$result = mysql_query($query);
+			$fields = array('Job ID','Title','Protein','Clashes','HBS','HBC','MSA','Voids','Status','Action');
+			echo '<table class="queryTable" width="100%" align=center>';
+			echo '<thead> <tr class=queryTitle> <td colspan=3></td> <td colspan=5 align=center> Scores </td> <td colspan=2></td></tr></thead>';
+			$tableheader = '<tbody id="tbodytag"> <tr class="queryTitle">';
+			foreach ($fields as $f):
+				$tableheader .= '<td>'.$f.'</td>';
+			endforeach;
+			$tableheader .= '</tr>';
+			echo $tableheader;
+			while ( $row = mysql_fetch_array($result)){
+				$jobid   = $row['jobid'];
+				//$pdbid   = $row[''];
+				$title    = $row['title'];
+				$postat   = $row['tposted'];
+				$jsonstr  = $row['jsonstr'];
+				$pdbid    = $row['pdbid'];
+				$authKey  = $row[ 'authKey'];
+				//$harmonic = $row['harmonic'];
+
+				$json_hash = parseJSONString($jsonstr);
+
+				$iconstr="<img src='style/img/done.png' title='Completed Successfully !' border='0px'>";
+				$statusstr="Done";
+
+				//$harmonicstr = ($harmonic==0) ? "<img src='style/img/no.png'>" : "<img src='style/img/yes.png'>";
+		
+				$haspdb = $row['!ISNULL(fpdb)'];
+				if ($haspdb) {
+					$pdbstr = "<a href='downloadpdb.php?id=$jobid'><img src='style/img/zipped.gif' title='download output pdb' border='0px'> </a>";
+//					$url = "loadPage(\"downloadpdb.php?id=$jobid\")";
+//					$pdbstr = "<img src='style/img/zipped.gif' title='download out pdb' onclick ='$url' style='cursor:pointer;' >";
+				}else{
+					$pdbstr = "";
+				}
+				$href = "javascript:delentry($jobid);";
+				$viewstr = "<a href='showresults.php?jobid=$jobid&authKey=$authKey&minimize=0'> <img src='style/img/view.png' title='view results' border='0px'> </a>";
+				//$pdbstr = "<a href='$href'> <img src='style/img/download.png' title='download files' border='0px'> </a>";
+				$str = "<a href='$href'> <img src='style/img/remove.png' title='delete this entry' border='0px'> </a>";
+		
+				echo "<tr id='entrytag$jobid'>";
+				echo "<td>$jobid</td>";
+				echo "<td> $title </td>";
+				echo "<td> $pdbid </td>";
+				//echo "<td align=center> $harmonicstr </td>";
+				//echo "<td> $postat </td>";
+				echo '<td> '.sprintf("%.3g",$json_hash[ 'clashscore']).' </td>';
+				echo '<td> '.sprintf("%.3g",$json_hash[ 'percent_shell']).' </td>';
+				echo '<td> '.sprintf("%.3g",$json_hash[ 'percent_unsatisfied']).' </td>';
+				echo '<td> '.sprintf("%.3f",$json_hash[ 'msa_rescaled']).' </td>';
+				echo '<td> '.sprintf("%.3f",$json_hash[ 'voidvolume_rescaled']).' </td>';
+				echo "<td align=center>$iconstr</td>";
+				echo "<td> $viewstr $pdbstr $str</td>";
+				echo "</tr>";
+			}
+			echo "</tbody></table>";
+		}
+
+		#----Query for failed jobs----
+		$query = "SELECT * FROM $tablejobs WHERE created_by='$userid' AND status='3' AND queue='gaia'";
+		$result = mysql_query($query);
+		$nrow = mysql_num_rows($result);
+
+		#----Check if any jobs have failed and display if they have----
+		if($nrow>0) {
+			$page = 0;
+			$nlimit = 20;
+			$offset = $page*$nlimit;
+			$query.="LIMIT $offset,$nlimit";
+			$result = mysql_query($query);
+			$fields = array("Job ID","Job Title","PDB ID","Submitted at","Status","Action");
+			$tableheader = '<table class="queryTable" width=100%> <tbody id="tbodytag"> <tr class="queryTitle">';
+			foreach ($fields as $f):
+				$tableheader .= '<td>'.$f.'</td>';
+			endforeach;
+			$tableheader .= '</tr>';
+			echo $tableheader;
+			while ( $row = mysql_fetch_array($result)){
+				$title    = $row['title'];
+				$jobid    = $row['id'];
+				$pdbid    = $row['pdbid'];
+				$subat    = $row['tsubmit'];
+				//$harmonic = $row['harmonic'];
+				//$message  = $row['message'];
+				$iconstr="<img src='style/img/failed.png' title='Job Failed !' border='0px'>";
+				$statusstr="Failed";
+				//$harmonicstr = ($harmonic==0) ? "<img src='style/img/no.png'>" : "<img src='style/img/yes.png'>";
+		
+				$href = "javascript:delentry($jobid);";
+				$str = "<a href='$href'> <img src='style/img/remove.png' title='delete this entry' border='0px'> </a>";
+		
+				echo "<tr id='entrytag$jobid'>";
+				echo "<td>$jobid</td>";
+				echo "<td>$title</td>";
+				echo "<td> $pdbid </td>";
+				echo "<td> $subat </td>";
+				//echo "<td align=center> $harmonicstr </td>";
+				echo "<td>$iconstr</td>";
+				//echo "<td> $message </td>";
+				echo "<td> $str</td>";
+				echo "</tr>";
+			}
+			echo "</tbody></table>";
+		}
+		
+	} else {
+	#----The user does not have completed or failed jobs recently----
+		echo '<div class="indexStatus">';
+		echo 'You have no recent results.';
+		echo '</div>';
+	}
+	echo '</div>';
+	
+	} // Do not remove this. It belongs here. It is the closing brace for the content if the user is not a guest.
+
+?>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+cint/cint/src/sizeof.cxx: In function ‘void G__typeconversion(G__ifunc_table_internal*, int, G__param*)’:
+cint/cint/src/sizeof.cxx:1474:7: warning: variable ‘formal_reftype’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/sizeof.cxx:1474:23: warning: variable ‘param_reftype’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/sizeof.cxx:1475:7: warning: variable ‘formal_tagnum’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/sizeof.cxx:1475:22: warning: variable ‘param_tagnum’ set but not used [-Wunused-but-set-variable]

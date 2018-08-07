@@ -1,0 +1,5 @@
+/var/www/htdocs/spell/root1/root/geom/geompainter/src/TGeoChecker.cxx: In member function ‘Double_t TGeoChecker::TimingPerVolume(TGeoVolume*)’:
+/var/www/htdocs/spell/root1/root/geom/geompainter/src/TGeoChecker.cxx:712:13: warning: variable ‘dist’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/geom/geompainter/src/TGeoChecker.cxx: In member function ‘void TGeoChecker::RandomRays(Int_t, Double_t, Double_t, Double_t)’:
+/var/www/htdocs/spell/root1/root/geom/geompainter/src/TGeoChecker.cxx:1769:10: warning: variable ‘istep’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/geom/geompainter/src/TGeoChecker.cxx:1779:24: warning: variable ‘step’ set but not used [-Wunused-but-set-variable]

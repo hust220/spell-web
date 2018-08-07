@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/math/mathcore/src/BinData.cxx: In member function ‘ROOT::Fit::BinData& ROOT::Fit::BinData::LogTransform()’:
+/var/www/htdocs/spell/root1/root/math/mathcore/src/BinData.cxx:459:18: warning: variable ‘valitr’ set but not used [-Wunused-but-set-variable]

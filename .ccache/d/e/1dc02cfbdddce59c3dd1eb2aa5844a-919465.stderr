@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/core/base/src/TDirectory.cxx: In member function ‘virtual void TDirectory::ls(Option_t*) const’:
+/var/www/htdocs/spell/root1/root/core/base/src/TDirectory.cxx:925:11: warning: variable ‘diskobj’ set but not used [-Wunused-but-set-variable]

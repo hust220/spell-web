@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/geom/geom/src/TGeoShape.cxx: In member function ‘void TGeoShape::TransformPoints(Double_t*, UInt_t) const’:
+/var/www/htdocs/spell/root1/root/geom/geom/src/TGeoShape.cxx:488:13: warning: variable ‘dlocal’ set but not used [-Wunused-but-set-variable]

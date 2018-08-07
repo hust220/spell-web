@@ -1,0 +1,3 @@
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGTable.cxx: In member function ‘virtual void TGTable::ResizeTable(UInt_t, UInt_t)’:
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGTable.cxx:716:11: warning: variable ‘oldwidth’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGTable.cxx:716:25: warning: variable ‘oldheight’ set but not used [-Wunused-but-set-variable]

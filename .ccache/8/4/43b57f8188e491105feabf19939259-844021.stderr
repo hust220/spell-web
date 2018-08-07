@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/io/io/src/TMakeProject.cxx: In static member function ‘static void TMakeProject::GenerateMissingStreamerInfos(TList*, const char*)’:
+/var/www/htdocs/spell/root1/root/io/io/src/TMakeProject.cxx:351:11: warning: variable ‘istemplate’ set but not used [-Wunused-but-set-variable]

@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/io/sql/src/TSQLStructure.cxx: In member function ‘Bool_t TSQLStructure::StoreClassInNormalForm(TSqlRegistry*)’:
+/var/www/htdocs/spell/root1/root/io/sql/src/TSQLStructure.cxx:1479:11: warning: variable ‘needblob’ set but not used [-Wunused-but-set-variable]

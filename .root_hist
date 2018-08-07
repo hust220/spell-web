@@ -1,0 +1,195 @@
+quit
+.q
+.q
+.q
+.q
+.q
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.x plot.C
+.q
+.q
+.q
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.x  pl1.C 
+.q
+.x pl2.C 
+.q
+.x pl2.C
+.q
+.x pl2.C
+.x plot.C
+.q
+.x pl3.C
+.q
+.x pl3.C
+.q
+.x pl3.C
+.q
+.x pl3.C
+.q
+.x pl3.C
+.q
+.x pl3.C
+.q
+.x pl3.C
+.q
+.x pl3.C
+.q
+.x plot.C
+.x pl2.C
+.x pl2.C
+.x pl2.C
+.x pl2.C
+.x pl2.C
+.q
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.q
+.x plot.
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.x plot.
+.x plot.C
+.q
+cd /scr2/spell/exec/1abs-237/
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.q
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.
+.x plot.C
+.q
+.x plot.C
+.q
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.
+.x plot.C
+.q
+.x plot.C
+TLine l(19, -55.5899, 19, -27.2257);
+l->Draw()
+l.Draw()
+.q
+l.Draw()
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+quit
+.q
+.x plot.C
+.q
+.x p.C
+.1
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.
+.x plot.C
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x plot.C
+.q
+.x p.C
+.q
+.x p.C
+.x p.C
+.q
+.x pl10.C
+.x pl10.C
+.q
+.x pl11.C
+.q
+.x pl11.C
+.q

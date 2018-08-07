@@ -1,0 +1,5 @@
+/var/www/htdocs/spell/root1/root/math/foam/src/TFoam.cxx: In member function ‘virtual void TFoam::Carver(Int_t&, Double_t&, Double_t&)’:
+/var/www/htdocs/spell/root1/root/math/foam/src/TFoam.cxx:766:65: warning: variable ‘primMax’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/math/foam/src/TFoam.cxx:769:10: warning: variable ‘jDivi’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/math/foam/src/TFoam.cxx: In member function ‘virtual Int_t TFoam::Divide(TFoamCell*)’:
+/var/www/htdocs/spell/root1/root/math/foam/src/TFoam.cxx:945:13: warning: variable ‘xdiv’ set but not used [-Wunused-but-set-variable]

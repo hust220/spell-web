@@ -1,0 +1,58 @@
+<form action="register.php" method="post" >
+	<table id="frmRegister" border="0" cellpadding="0" cellspacing="0" width="100%"  
+	<?php 
+		if (!isset($_SESSION['loginerror'])){
+			echo ( ' style="display:none"');
+		}elseif($_SESSION['loginerror']=='0') {
+			echo ( ' style="display:none"');
+		}else{
+			unset($_SESSION['loginerror']);
+		}
+	?>  >
+		<tr>
+			<td>Username<br><small>(max. 10 char)</small><br><br></td>
+			<td>&nbsp;:&nbsp;</td>
+			<td><input id="username" type="text" name="username" maxlength="10" value="<?php myform("username")?>"/></td>
+		</tr>
+		<?php if (isset($_SESSION["error_username"])) {echo("<tr>");myerror('username');echo("</tr>"); } ?>
+		<tr>
+			<td>Password<br><small>(max. 15 char)<br><br></small></td>
+			<td>:</td>
+			<td><input id="password" type="password" name="password" maxlength="15" /></td>
+		</tr>
+		<?php if (isset($_SESSION["error_password"])) {echo("<tr>");myerror('password');echo("</tr>"); } ?>
+		<tr>
+			<td>Confirm Pass</td>
+			<td>:</td>
+			<td><input id="confirm_pass" type="password" name="confirm_pass" maxlength="15" /></td>
+		</tr>
+		<?php if (isset($_SESSION["error_confirm_pass"])) {echo("<tr>");myerror('confirm_pass');echo("</tr>"); } ?>
+		<tr>
+			<td>First Name</td>
+			<td>:</td>
+			<td><input id="namefirst" type="text" name="namefirst"  maxlength="15" value="<?php myform("namefirst")?>" /></td>
+		</tr>
+		<?php if (isset($_SESSION["error_namefirst"])) {echo("<tr>");myerror('namefirst');echo("</tr>"); } ?>
+		<tr>
+			<td>Last Name</td>
+			<td>:</td>
+			<td><input id="namelast" type="text" name="namelast"  maxlength="15" value="<?php myform("namelast")?>" /></td>
+		</tr>
+		<?php if (isset($_SESSION["error_namelast"])) {echo("<tr>");myerror('namelast');echo("</tr>"); } ?>
+		<tr>
+			<td>Email</td>
+			<td>:</td>
+			<td><input id="email" type="text" name="email" maxlength="100"  value="<?php myform("email")?>" /></td>
+		</tr>
+		<?php if (isset($_SESSION["error_email"])) {echo("<tr>");myerror('email');echo("</tr>"); } ?>
+		<tr>
+			<td>Organization<br><small>(max. 20 char)</small><br><br></td>
+			<td>:</td>
+			<td><input id="organization" type="text" name="organization" maxlength="20"  value="<?php myform("organization")?>" /></td>
+		</tr>
+		<?php if (isset($_SESSION["error_organization"])) {echo("<tr>");myerror('organization');echo("</tr>"); } ?>
+		<tr>
+			<td colspan="3" align="center"><input type="Submit" id="button" onClick="return validateRegister();" value="Register an Account" style="width:150px"/></td>
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,13 @@
+---
+history:
+  - attempts:
+      - method: dleasy
+        start: 1485959973.98555
+        url: &1 !!perl/hash:CPAN::URL
+          FROM: DEF
+          TEXT: http://www.perl.org/CPAN/
+    end: 1485959974.50845
+    file: MIRRORED.BY
+    filesize: 122677
+    start: 1485959973.98546
+    thesiteurl: *1

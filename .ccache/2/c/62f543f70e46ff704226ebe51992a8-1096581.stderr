@@ -1,0 +1,7 @@
+cint/cint/src/tmplt.cxx: In function ‘int G__getobjecttagnum(char*)’:
+cint/cint/src/tmplt.cxx:963:9: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/tmplt.cxx: In function ‘void G__declare_template()’:
+cint/cint/src/tmplt.cxx:1387:7: warning: variable ‘ismemvar’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/tmplt.cxx: In function ‘int G__matchtemplatefunc(G__Definetemplatefunc*, G__param*, G__Charlist*, int)’:
+cint/cint/src/tmplt.cxx:3236:7: warning: variable ‘ftypenum’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/tmplt.cxx:3236:16: warning: variable ‘typenum’ set but not used [-Wunused-but-set-variable]

@@ -1,0 +1,5 @@
+/var/www/htdocs/spell/root1/root/graf2d/postscript/src/TImageDump.cxx: In member function ‘virtual void TImageDump::DrawFrame(Double_t, Double_t, Double_t, Double_t, Int_t, Int_t, Int_t, Int_t)’:
+/var/www/htdocs/spell/root1/root/graf2d/postscript/src/TImageDump.cxx:213:13: warning: variable ‘xl’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/graf2d/postscript/src/TImageDump.cxx:213:17: warning: variable ‘xt’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/graf2d/postscript/src/TImageDump.cxx:213:21: warning: variable ‘yl’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/graf2d/postscript/src/TImageDump.cxx:213:25: warning: variable ‘yt’ set but not used [-Wunused-but-set-variable]

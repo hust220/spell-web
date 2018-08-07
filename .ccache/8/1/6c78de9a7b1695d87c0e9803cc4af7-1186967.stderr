@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/hist/hist/src/TFormula.cxx: In member function ‘void TFormula::MakePrimitive(const char*, Int_t)’:
+/var/www/htdocs/spell/root1/root/hist/hist/src/TFormula.cxx:3660:8: warning: variable ‘nargs’ set but not used [-Wunused-but-set-variable]

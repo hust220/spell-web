@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Example of loading MSAViewer from a string">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="https://cdn.bio.sh/msa/latest/msa.min.gz.js"></script>
+<div id="msa">Loading Multiple Alignment...</div>
+
+<div id="msa1">Loading Multiple Alignment...</div>
+
+<script>
+var rootDiv = document.getElementById("msa");
+
+var opts = {
+  el: rootDiv,
+//  importURL: "./download/qRasGEF.clustal",
+  importURL: "./download/o4.aln",
+  vis: {
+    labelId: false,
+    conserv: false,
+    overviewbox: false,
+    seqlogo: true
+  },
+  conf: {
+    dropImport: true
+  },
+  zoomer: {
+    menuFontsize: "12px",
+    autoResize: true
+  }
+};
+var m = msa(opts);
+
+
+
+//m.g.colorscheme.addStaticScheme("own",{A: "orange", C: "red", G: "green", T: "blue"});
+//m.g.colorscheme.set("scheme", "own");
+//var se = new msa.selection.columnsel({xStart: 10, xEnd: 12});
+//m.g.selcol.add(se);
+//alert(m.g.selcol.length);
+
+
+var rootDiv1 = document.getElementById("msa1");
+var opts1 = {
+  el: rootDiv1,
+  importURL: "./download/qRasGEF_N.clustal",
+  vis: {
+    labelId: false,
+    conserv: false,
+    overviewbox: false,
+    seqlogo: true
+  },
+  conf: {
+    dropImport: true
+  },
+  zoomer: {
+    menuFontsize: "12px",
+    autoResize: true
+  }
+};
+var m1 = msa(opts1);
+
+
+</script>
+
+</body>
+</html>
+

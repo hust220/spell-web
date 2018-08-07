@@ -1,0 +1,16 @@
+	Welcome to <b>SPELL</b> portal! Please use your username and password to login or sign up for a new account.
+<p>
+	<b>SPELL</b> is an acronym for <b>S</b>plit <b>P</b>rotein Reass<b>e</b>mbly by <b>L</b>igands or <b>L</b>ight.
+	<b>SPELL</b> server predicts potential split sites in proteins such that two halves of a splitted protein being 
+        attached to a couple of other proteins (that dimerize upon ligand or light stimulation) can reassemble into 
+        a full protein upon ligand or light stimulation. The server ranges potential split sites according to the degree of prediction reliability.
+</p>
+<p>More details are available in the following publication: <br><br>
+<strong> Computational design of regulatable split proteins with reduced background activity :
+Onur Dagliyan, Andrey Krokhotin, Alexander Deiters, Klaus M. Hahn, Nikolay V. Dokholyan, 
+<i>submitted</i> </strong>
+</p>
+
+<p>
+	Please read the <a href="terms.html"> terms and conditions </a> of using SPELL. Please contact krohotin @ email.unc.edu for technical support and comments.
+</p>

@@ -1,0 +1,4 @@
+/var/www/htdocs/spell/root1/root/graf2d/graf/src/TPie.cxx: In member function ‘void TPie::DrawGhost()’:
+/var/www/htdocs/spell/root1/root/graf2d/graf/src/TPie.cxx:314:13: warning: variable ‘radY’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/graf2d/graf/src/TPie.cxx: In member function ‘virtual void TPie::ExecuteEvent(Int_t, Int_t, Int_t)’:
+/var/www/htdocs/spell/root1/root/graf2d/graf/src/TPie.cxx:445:13: warning: variable ‘radY’ set but not used [-Wunused-but-set-variable]

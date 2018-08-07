@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/core/editline/src/chared.cxx: In function ‘int ch_enlargebufs(EditLine_t*, size_t)’:
+/var/www/htdocs/spell/root1/root/core/editline/src/chared.cxx:540:30: warning: variable ‘oldcolorbuf’ set but not used [-Wunused-but-set-variable]

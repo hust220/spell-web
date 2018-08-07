@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/math/minuit/src/TLinearFitter.cxx: In member function ‘virtual void TLinearFitter::SetFormula(const char*)’:
+/var/www/htdocs/spell/root1/root/math/minuit/src/TLinearFitter.cxx:1473:11: warning: variable ‘isHyper’ set but not used [-Wunused-but-set-variable]

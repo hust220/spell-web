@@ -1,0 +1,119 @@
+BODY {
+	background:				#f7f7f7;
+	color:					#356B84;
+	font:					normal normal 14px "trebuchet ms", georgia, arial;
+	text-align:				center;
+}
+
+A:link {
+	text-decoration:		none;
+}
+
+#main {
+	margin:					0px auto;
+	width:					750px;
+}
+
+#header {
+	background:				url(img/head_back.jpg) repeat-x;
+	height:					50px;
+	text-align:				left;
+}
+
+#meta {
+	background:				#f1f1f1;
+	border-bottom:			1px solid rgb(173, 215, 239);
+	padding:				2px 2px 2px 2px;
+	height:					16px;
+	font:					normal normal 12px 'trebuchet ms', georgia, arial;
+	color:					rgb(83, 140, 166);
+	text-align:				left;
+}
+
+#content {
+	margin:					30px 0 0 0;
+	text-align:				left;
+}
+
+#main_content {
+	float:					left;
+	overflow:				auto;
+	padding:				0px;
+	width:					550px;
+}
+
+#menu {
+	font:					normal normal 10px 'verdana', tahoma, arial;
+	float:					left;
+	width:					200px;
+}
+
+#menu INPUT {
+	background:				#E0ECEF;
+	color:					#538CA7;
+	font:					normal normal 12px 'trebuchet ms', georgia, arial;
+	border:					1px solid #C3DADF;
+	width:					100px;
+}
+
+#menu INPUT:focus {
+	background:				#FDFFDF;
+	border:					1px solid #CDD45D;
+}
+
+#menu .errors_box {
+	background:				#F0F0F0;
+	border:					1px solid #D0D0D0;
+	color:					#AF2026;
+	padding:				4px;
+	margin:					0 0 5px 0;
+	display:				none;
+}
+
+#menu #frmLogin {
+	background:				#f5f5f5;
+	border:					1px solid #eeeeee;
+	color:					#9cc3ce;
+	height:					40px;
+	padding:				5px;
+}
+
+#menu #frmLogin * {
+	font:					normal normal 10px 'verdana', tahoma, arial;
+}
+
+#menu #frmLogin table tr {
+	height:					20px;
+}
+
+#menu #frmLogin table tr td {
+	color:					#528ead;
+}
+
+#menu #frmLogin INPUT {
+	background:				#E0ECEF;
+	color:					#538CA7;
+	border:					1px solid #E0E0E0;
+	width:					70px;
+}
+
+#menu #frmLogin INPUT:focus {
+	background:				#FDFFDF;
+	border:					1px solid #CDD45D;
+}
+
+#menu #sucRegister {
+	background:				#EFFCFF;
+	border:					1px solid #D1E9EF;
+	font:					normal normal 12px 'trebuchet ms', tahoma, arial;
+	padding:				5px;
+	line-height:			2.0;
+}
+
+#menu #frmRegister * {
+	font:					normal normal 12px 'trebuchet ms', tahoma, arial;
+}
+
+#menu #frmRegister table tr {
+	height:					30px;
+}

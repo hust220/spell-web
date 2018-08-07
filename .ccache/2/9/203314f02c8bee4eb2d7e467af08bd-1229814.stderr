@@ -1,0 +1,5 @@
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGFileBrowser.cxx: In member function ‘void TGFileBrowser::AddRemoteFile(TObject*)’:
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGFileBrowser.cxx:399:16: warning: variable ‘uid’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGFileBrowser.cxx:399:21: warning: variable ‘gid’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGFileBrowser.cxx:400:11: warning: variable ‘modtime’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGFileBrowser.cxx:401:13: warning: variable ‘size’ set but not used [-Wunused-but-set-variable]

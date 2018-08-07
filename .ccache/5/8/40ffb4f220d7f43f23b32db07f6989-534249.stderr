@@ -1,0 +1,2 @@
+Name.xs: In function ‘XS_Sub__Name_subname’:
+Name.xs:141:2: warning: suggest parentheses around arithmetic in operand of ‘|’ [-Wparentheses]

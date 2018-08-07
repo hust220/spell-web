@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Example of loading MSAViewer from a string">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="https://cdn.bio.sh/msa/latest/msa.min.gz.js"></script>
+<div id="msa">Loading Multiple Alignment...</div>
+
+<script>
+var rootDiv = document.getElementById("msa");
+
+var opts = {
+  el: rootDiv,
+//  importURL: "http://troll.med.unc.edu//spell/p53.clustalo.clustal",
+//  importURL: "https://raw.githubusercontent.com/wilzbach/msa/master/test/dummy/samples/p53.clustalo.clustal",
+//  importURL: "./qGlobin.clustal",
+//  importURL: "./qGlobin.sto",
+//  importURL: "./qRasGEF.clustal",
+//    importURL: "./download/qRasGEF.clustal",
+//    importURL: "./download/Vinc.clustal",
+    importURL: "./o1.aln",
+  vis: {
+    labelId: false,
+    conserv: false,
+    overviewbox: false,
+    seqlogo: true
+  },
+  conf: {
+    dropImport: true
+  },
+  zoomer: {
+    menuFontsize: "12px",
+    autoResize: true
+    setLeftOffset: 10
+  }
+};
+var m = msa(opts);
+
+
+</script>
+
+</body>
+</html>
+

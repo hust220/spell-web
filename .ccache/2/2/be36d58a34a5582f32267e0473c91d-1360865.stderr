@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/gui/gui/src/TRootBrowserLite.cxx: In member function ‘virtual void TRootBrowserLite::AddToTree(TObject*, const char*, Int_t)’:
+/var/www/htdocs/spell/root1/root/gui/gui/src/TRootBrowserLite.cxx:1440:17: warning: variable ‘isRemote’ set but not used [-Wunused-but-set-variable]

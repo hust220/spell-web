@@ -1,0 +1,2 @@
+cint/cint/src/Class.cxx: In member function ‘void Cint::G__ClassInfo::DeleteArray(void*, int)’:
+cint/cint/src/Class.cxx:1167:9: warning: variable ‘status’ set but not used [-Wunused-but-set-variable]

@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/hist/hist/src/HFitImpl.cxx: In function ‘TFitResultPtr ROOT::Fit::UnBinFit(ROOT::Fit::UnBinData*, TF1*, Foption_t&, const ROOT::Math::MinimizerOptions&)’:
+/var/www/htdocs/spell/root1/root/hist/hist/src/HFitImpl.cxx:713:9: warning: variable ‘fitok’ set but not used [-Wunused-but-set-variable]

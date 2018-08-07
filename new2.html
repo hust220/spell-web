@@ -1,0 +1,17 @@
+<meta name="description" content="Simple MSA example" />
+<!-- feel free to hack around and give feedback @greenify -->
+
+<link type=text/css rel=stylesheet href=//cdn.biojs-msa.org/msa/latest/msa.min.gz.css />
+<script src=//cdn.biojs-msa.org/msa/latest/msa.min.gz.js></script>
+<div id=msa></div>
+
+<script>
+// this is a way how you use a bundled file parser
+biojs.io.clustal.read("https://raw.githubusercontent.com/wilzbach/msa/master/test/dummy/samples/p53.clustalo.clustal", function(seqs){
+  // just construct the msa component with your div element, the seqs and other properties
+  var msa = new biojs.vis.msa.msa({el: document.getElementById('msa'), seqs: seqs, zoomer: {labelWidth: 300}, vis: {conserv: false}, allowRectSelect : true }).render();
+
+  var se = new biojs.vis.msa.selection.columnsel({xStart: 2, xEnd: 4});
+  msa.g.selcol.add(se);
+});
+</script>

@@ -1,0 +1,2 @@
+cint/cint/src/ifunc.cxx: In function ‘int G__interpret_func(G__value*, const char*, G__param*, int, G__ifunc_table_internal*, int, int)’:
+cint/cint/src/ifunc.cxx:4861:36: warning: variable ‘store_p_ifunc’ set but not used [-Wunused-but-set-variable]

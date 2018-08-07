@@ -1,0 +1,44 @@
+<properties>
+	<!-- General Properties -->
+	<configuration>
+		<config>
+			<name>admin_email</name>
+			<value>jianopt@ad.unc.edu</value>
+			<!--<value>ddg@troll.med.unc.edu</value>-->
+		</config>
+		<config>
+			<name>smtp_host</name>
+			<value>smtp.unc.edu</value>
+		</config>
+		<config>
+			<name>smtp_user</name>
+			<value></value>
+		</config>
+		<config>
+			<name>smtp_password</name>
+			<value></value>
+		</config>
+		<config>
+			<name>db_host</name>
+			<value>localhost</value>
+		</config>
+		<config>
+			<name>db_user</name>
+			<value>spell_svc</value>
+			<!--<value>ddg</value>-->
+		</config>
+		<config>
+			<name>db_password</name>
+			<value>sixth-S3cr3t</value>
+			<!--<value>ddg4me</value>-->
+		</config>
+		<config>
+			<name>db_name</name>
+			<value>ddg</value>
+		</config>
+		<config>
+			<name>upload_directory</name>
+			<!--<value>/var/www/html/ddg/ddgManager/uploads</value>-->
+		</config>
+	</configuration>
+</properties>

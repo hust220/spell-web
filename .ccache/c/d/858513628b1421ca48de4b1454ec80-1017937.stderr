@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/proof/proof/src/TDataSetManager.cxx: In static member function ‘static Int_t TDataSetManager::ScanDataSet(TFileCollection*, Int_t, Int_t, Int_t, Bool_t, Int_t*, Int_t*, Int_t*, TList*, Long64_t, const char*, Int_t, const char*)’:
+/var/www/htdocs/spell/root1/root/proof/proof/src/TDataSetManager.cxx:1429:17: warning: variable ‘mapped’ set but not used [-Wunused-but-set-variable]

@@ -1,0 +1,2 @@
+cint/cint/src/macro.cxx: In function ‘int G__createfuncmacro(char*)’:
+cint/cint/src/macro.cxx:280:8: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]

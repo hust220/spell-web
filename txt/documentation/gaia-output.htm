@@ -1,0 +1,63 @@
+<!-- Format 
+<h3>
+	<a href="#">
+		Question
+	</a>
+</h3>
+
+<div>
+	<p>
+		Answer
+	</p>
+</div>
+-->
+<h3><a href="#">How do i view output?</a></h3>
+<div>
+	<p>Click on the eye icon next to the job in your job listing on the 'Home/Overview' or 'User Activity' pages under the tab Gaia. You will be presented with a page with multiple sections of output. Click on each section heading (e.g. Steric clashes) to see detailed output.</p>
+</div>
+
+<h3><a href="#">What is inside 'Steric clashes'?</a></h3>
+<div>
+	<p>The clash score for the input structure is reported under this tab. Clash score is obtained by normalizing the number of clashes in the given protein structure by the number of contacts. We have computed the clash scores for approximately 4300 protein chains and plotted the distribution of normalized values. This distribution along with a red line representing the value of the clash score for the input structure is presented as a plot.</p>
+</div>
+
+<h3><a href="#">What is inside 'Hydrogen bonds in the shell'?</a></h3>
+<div>
+	<p>The number of unsatisfied hydrogen bonding partners in the shell of the protein are reported under this tab. Here, the shell is defined as a set of atoms between the core and surface of the protein. Typically, the shell is shielded from the solvent by the surface exposed atoms. Therefore, these atoms cannot form hydrogen bonds with bulk solvent. They could form hydrogen bonds with buried structural water molecules. We account for this possibility by ignoring the polar atoms that line the cavities in the interior of the protein. We have computed the numbers of unsatisfied hydrogen bonding partners in a high resolution dataset of approximately 4300 proteins to obtain statistics from the PDB database. The distribution of unsatisfied hydrogen bonds along with a red line representing the input structure is provided under this tab.</p>
+</div>
+
+<h3><a href="#">What is inside 'Hydrogen bonds in the core'?</a></h3>
+<div>
+	<p>The number of unsatisfied hydrogen bonding partners in the protein core are reported under this tab. We have computed the numbers of unsatisfied hydrogen bonding partners in a high resolution dataset of approximately 4300 proteins to obtain statistics from the PDB database. The distribution of unsatisfied hydrogen bonds along with a red line representing the input structure is provided under this tab.</p>
+</div>
+
+<h3><a href="#">What is inside 'Solvent accessible surface area'?</a></h3>
+<div>
+	<p>The total solvent accessible surface area (SASA) of the input protein is reported under this tab. We compute the SASA of the protein using boolean logic and look-up tables explained in Le Grand and Merz (1992) <i>J. Comput. Chem.</i>, 14:349-352. A plot with a red line representing the input protein structure in context of a distribution of scaled SASA from a dataset of high resolution crystal structures is also provided. Being two standard deviations within the mean of the normalized SASA indicates that the protein structure features SASA scaling characteristic of high-resolution structures. Having normalized SASA higher than two standard deviations from the mean indicates excessive exposure of protein surface, which is unfavorable for folded proteins. Having a smaller scaled SASA than observed for high resolution structures however is not unfavorable, it just indicates a much more compact fold than observed in high resolution protein structures.</p>
+</div>
+<h3><a href="#">What is inside 'Voids'?</a></h3>
+<div>
+	<p>The total void volume of the input protein is reported under this tab. According to our program, the total void volume of most proteins is zero. Thus, the distribution of total void volume from high resolution dataset features two regimes: first is nearly zero total void volume and the rest forming an exponential decay. Hence, in the linear-log plot featured in the server, there are two intersecting lines: first line corresponds to probability of nearly zero total void volume of a protein, while the second line corresponds to the exponentially decaying probability of a protein's total void volume.</p>
+</div>
+<h3><a href="#">What is inside 'Protein geometry'?</a></h3>
+<div>
+	<p>This section of output reports the outliers in bond lengths, angles, dihedrals and backbone (omega) angles of the input protein structure under different tabs. 
+	<ul>
+		<li>The bond lengths for all standard bonds were calculated from the crystal structures included in our high resolution dataset, and the mean and standard deviation from the resulting distributions were used in determining p-values for bond lengths of the input structure. A p-value less than 0.05 is reported as an outlier and presented in the output of a protein structure. For bonds with standard deviation less than 2.5% of the mean (as calculated from the standard distribution), we reset the standard deviation as 2.5% of the mean. We reset the standard deviation because the force constants for the bonded term in the MD force fields allow between 2.5-4% deviation in bond lengths at 300K. Thus, to report realistic outliers in modeled structures, we require the standard deviation to be at least 2.5% of the mean. We included the mean and standard deviation of the standard bonds in the Supplementary data of the corresponding manuscript (please see homepage for the citation), which would help in understanding which bonds are reported as outliers for a given structure.</li>
+		<li>For the &phi;-&psi; dihedrals, a two-dimensional histogram with bin width of 2&deg; was constructed from the high resolution dataset, combining all amino acid types excluding proline and glycine. A separate histogram was constructed for proline. In the input structure, residues whose &phi;-&psi; values belong to a lowly populated bin (roughly less than 2.5% of the population) are designated as outliers. We offer the plot with the two-dimensional standard histogram and the marked outliers to visualize the positions of the outliers in the &phi;-&psi; space.</li>
+		<li>We compute the peptide bond angle (&omega;) to determine the planarity of the protein backbone. </li>
+	</ul>
+	</p>
+</div>
+<h3><a href="#">What is inside 'Side chain integrity'?</a></h3>
+<div>
+	<p>This section of output reports the list of outliers (if any) from the standard Dunbrack library of backbone dependent rotamers for any amino acid in the input protein structure. We compute the applicable side chain Chi (&chi;1-4) angles and compare against the standard rotamer side chain angles from the Dunbrack library. If any of the Chi angles are more than 2 standard deviations from the mean value, we report all the Chi angles and color the one that is an outlier in red.</p>
+</div>
+<h3><a href="#">Can i download the results in some format?</a></h3>
+<div>
+	<p>Yes ! The properties of the input protein structure can be downloaded as a PDF document. Just click on the 'Full report' or 'Summary' links at the bottom of the page where the results are displayed, and a PDF file will be generated on the fly, which can either be viewed in the browser or downloaded to your computer. The summary PDF document contains information that is displayed on the web page, as a set of tables and figures. The full report contains lists of atoms that are involved in steric clashes, unsatisfied hydrogen bonding partners and voids among others.</p>
+</div>
+<h3><a href="#">How do I view the results in PyMOL?</a></h3>
+<div>
+	<p>To enable visualization of all the parameters, Gaia also provides a python script that can be used in conjunction with pymol (http://www.pymol.org/). Just download the .py file and open it with pymol. Alternatively, if pymol is open, type in the pymol command line &#39;run &lt;.py file with path&gt; &#39;  and press return</p><p><strong>Note : The python script will refresh pymol to start a new session, so save existing work before running the script. Before running the script, make sure the current directory is writeable.</strong></p><p>Upon successfully running the script, multiple objects will be created. Different parameters and their representations are shown in the image below.<br> <a href="style/img/pymol-documentation.png" rel="lytebox" title="PyMOL Session Help"><img src="style/img/pymol-documentation.png" width=500 height=306></a></p>
+</div>

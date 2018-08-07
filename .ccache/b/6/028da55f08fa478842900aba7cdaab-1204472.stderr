@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/math/splot/src/TSPlot.cxx: In member function ‘void TSPlot::SetTreeSelection(const char*, const char*, Long64_t)’:
+/var/www/htdocs/spell/root1/root/math/splot/src/TSPlot.cxx:1004:32: warning: variable ‘curentry’ set but not used [-Wunused-but-set-variable]

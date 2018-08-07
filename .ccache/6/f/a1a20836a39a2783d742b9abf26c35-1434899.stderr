@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/proof/proof/src/TProofServ.cxx: In member function ‘virtual void TProofServ::ProcessNext(TString*)’:
+/var/www/htdocs/spell/root1/root/proof/proof/src/TProofServ.cxx:3973:13: warning: variable ‘elist’ set but not used [-Wunused-but-set-variable]

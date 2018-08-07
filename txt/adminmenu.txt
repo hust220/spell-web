@@ -1,0 +1,10 @@
+<?php 
+	if ($_SESSION['userlevel'] >= 3) { # administration menu
+?>
+<a href="useradmin.php" class="nav"><div class='ui-state-default ui-corner-all navi'> <font color='#990000'> User Admin </font></div></a><br/>
+<a href="jobadmin.php" class="nav"><div class='ui-state-default ui-corner-all navi'> <font color='#990000'> Job Admin </font></div></a><br/>
+<a href="mailer.php" class="nav"><div class='ui-state-default ui-corner-all navi'> <font color='#990000'> Message Center </font></div></a><br/>
+<!--<a href="pdbadmin.php" class="nav"><div class='ui-state-default ui-corner-all navi'> <font color='red'>PDB Admin </font></div></a><br/>-->
+<?php 
+}
+?>

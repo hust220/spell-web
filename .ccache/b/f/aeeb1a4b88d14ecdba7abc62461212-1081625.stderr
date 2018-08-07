@@ -1,0 +1,4 @@
+/var/www/htdocs/spell/root1/root/tree/treeplayer/src/TTreeProxyGenerator.cxx: In member function ‘UInt_t ROOT::TTreeProxyGenerator::AnalyzeOldLeaf(TLeaf*, UInt_t, ROOT::TBranchProxyClassDescriptor*)’:
+/var/www/htdocs/spell/root1/root/tree/treeplayer/src/TTreeProxyGenerator.cxx:1036:13: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/tree/treeplayer/src/TTreeProxyGenerator.cxx: In member function ‘void ROOT::TTreeProxyGenerator::AnalyzeElement(TBranch*, TStreamerElement*, UInt_t, ROOT::TBranchProxyClassDescriptor*, const char*)’:
+/var/www/htdocs/spell/root1/root/tree/treeplayer/src/TTreeProxyGenerator.cxx:1396:14: warning: variable ‘ispointer’ set but not used [-Wunused-but-set-variable]

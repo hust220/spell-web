@@ -1,0 +1,2 @@
+core/utils/src/rootcint_tmp.cxx: In function ‘void StrcpyWithEsc(std::string&, const char*)’:
+core/utils/src/rootcint_tmp.cxx:3942:11: warning: variable ‘k’ set but not used [-Wunused-but-set-variable]

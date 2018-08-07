@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/io/io/src/TContainerConverters.cxx: In member function ‘virtual void TConvertClonesArrayToProxy::operator()(TBuffer&, void*, Int_t)’:
+/var/www/htdocs/spell/root1/root/io/io/src/TContainerConverters.cxx:180:13: warning: variable ‘clv’ set but not used [-Wunused-but-set-variable]

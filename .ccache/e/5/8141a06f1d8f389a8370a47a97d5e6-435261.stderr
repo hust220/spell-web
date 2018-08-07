@@ -1,0 +1,2 @@
+cint/cint/src/intrpt.cxx: In function ‘int G__call_interruptfunc(char*)’:
+cint/cint/src/intrpt.cxx:275:23: warning: variable ‘store_asm_loopcompile’ set but not used [-Wunused-but-set-variable]

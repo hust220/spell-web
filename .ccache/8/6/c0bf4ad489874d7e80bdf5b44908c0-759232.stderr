@@ -1,0 +1,2 @@
+cint/cint/src/pause.cxx: In function ‘int G__process_cmd(char*, char*, int*, int*, G__value*)’:
+cint/cint/src/pause.cxx:1593:23: warning: variable ‘store_asm_loopcompile’ set but not used [-Wunused-but-set-variable]

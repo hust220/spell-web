@@ -1,0 +1,6 @@
+/var/www/htdocs/spell/root1/root/hist/histpainter/src/TPainter3dAlgorithms.cxx: In member function ‘void TPainter3dAlgorithms::LegoFunction(Int_t, Int_t, Int_t&, Double_t*, Double_t*, Double_t*)’:
+/var/www/htdocs/spell/root1/root/hist/histpainter/src/TPainter3dAlgorithms.cxx:2127:13: warning: variable ‘xval1l’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/hist/histpainter/src/TPainter3dAlgorithms.cxx:2127:21: warning: variable ‘xval2l’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/hist/histpainter/src/TPainter3dAlgorithms.cxx: In member function ‘void TPainter3dAlgorithms::SurfaceFunction(Int_t, Int_t, Double_t*, Double_t*)’:
+/var/www/htdocs/spell/root1/root/hist/histpainter/src/TPainter3dAlgorithms.cxx:3733:13: warning: variable ‘xval1l’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/hist/histpainter/src/TPainter3dAlgorithms.cxx:3733:21: warning: variable ‘xval2l’ set but not used [-Wunused-but-set-variable]

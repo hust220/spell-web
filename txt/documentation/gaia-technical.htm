@@ -1,0 +1,41 @@
+<!-- Format 
+<h3>
+	<a href="#">
+		Question
+	</a>
+</h3>
+
+<div>
+	<p>
+		Answer
+	</p>
+</div>
+-->
+<h3><a href="#">How do I submit a job?</a></h3>
+<div>
+	<p>For every minimization run, the server requires a protein structure, which can be provided either by specifying a PDB identifier or by a direct file upload. In case the PDB ID corresponds to an NMR structure, only the first model is considered. Should you wish to upload an NMR structure, please make sure you submit only one model, in order to avoid failed jobs. The submitted tasks are queued and processed when there are available computational resources. The recently submitted tasks (since last login) are listed under the "Home/Overview" menu.</p>
+</div>
+
+<h3><a href="#">Can my PDB contain small molecules?</a></h3>
+<div>
+	<p>Gaia currently ignores small molecules in a given PDB. Therefore, results, especially those pertaining to voids, must be reviewed carefully since buried small molecule binding sites will be represented as voids.</p>
+</div>
+
+<h3><a href="#">How do I view results?</a></h3>
+<div>
+	<p>Finished jobs are listed under &#39;User Activity&#39; page. Clicking the &#39;eye&#39; icon under action column for a particular job will take you to the results page ofthat job. In the result page, you can<ol><li>Download the minimized structure in the PDB format</li><li>View/Download the clash reports of the initial and final structures that lists all the atom-pairs that clash, their distance of separation, their accepted distance of separation (at which the repulsive energy will be less than 0.3 kcal/mol) and the raw clash-energy.</li><li>Download the PyMOL script (see &#39;What do I do with the PyMOL script (.py file)?&#39;).</li></ol></p>
+</div>
+
+<h3><a href="#">What do I do with the PyMOL script (.py file)?</a></h3>
+<div>
+	<p>To enable visualization of different features and anamolous regions of the input structure, Gaia also provides a python script that can be used in conjunction with pymol (http://www.pymol.org/). Just download the .py file and open it with pymol. Alternatively, if pymol is open, type in the pymol command line &#39;run &lt;.py file with path&gt; &#39;  and press return</p><p><strong>Note : The python script will refresh pymol to start a new session, so save existing work before running the script.</strong></p><p>Upon successfully running the script, independent objects representing each filter will be created.</p>
+</div>
+
+<h3><a href="#">Why did my job fail?</a></h3>
+<div>
+	<p>Please shoot an email to the site admin and we will fix individual issues. There are many possible issues with input pdb files, some of which we list here and some under the question Why does the server say <strong>&#34;Error loading pdb file&#34;</strong>?, but the list is not exhaustive.<ol><li>The PDB has non-protein atoms, like DNA or RNA. The server does not read in HETATM, so that is not a problem, but the server does not recognize ATOM records that contain non-protein coordinates.</li><li>Multi-Chain PDBs are acceptable, however, the chains should be separated by either TER card or have different chain-IDs to differentiate chains. Continuous residue numbering combined with same chain ID and lack of TER card between two chains might cause jobs to fail.</li><li>If there is a chain break (missing coordinates for residues of a loop, for example), the server will still work. However, such chain breaks need to be indicated in one of these ways: retaining original residue numbering (then the server will detect missing residue numbers, thus accounting for chain break) or by putting a TER card between the residues lining the break, or by using different chain IDs for different parts of the broken chain.</li><li>Some PDB files have a continuous chain but discontinuous residue ids. Such a case would be wrongly identified as a chain break, causing DMD to fail.</li><li>If the HETATM section of the input pdb contains atom types that have not yet been parametrized in DMD or if it contains atoms that are bonded to the protein, your job is likely to fail. Also, bonds between small molecules and protein atoms are not recognized and hence reported as clashes.</li></ol></p>
+</div>
+<h3><a href="#">Why does the server say &#34;Error loading pdb file&#34;?</a></h3>
+<div>
+	<p>This error refers to a case where our program encounters an error reading the PDB file. Following are some of the possible reasons.<ol><li>You might have provided a PDB ID that does not exist.</li><li>Your PDB file contains unnatural amino acids. Our current implementation only supports the 20 natural amino acid types: ALA, CYS, ASP, GLU, PHE, GLY, HIS, ILE, LYS, LEU, MET, ASN, PRO, GLN, ARG, SER, THR, VAL, TRP and TYR. Existence of residues other than the listed types in the ATOM records can cause the error.</li><li>Backbone heavy atoms are missing. The program requires coordinates of all backbone N, C and CA atoms for each residue, and will reconstruct other missing atoms from the input pdb file.</li></ol></p>
+</div>

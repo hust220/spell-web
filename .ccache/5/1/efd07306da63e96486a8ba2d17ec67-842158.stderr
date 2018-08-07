@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/gui/gui/src/TRootDialog.cxx: In member function ‘virtual Bool_t TRootDialog::HandleKey(Event_t*)’:
+/var/www/htdocs/spell/root1/root/gui/gui/src/TRootDialog.cxx:294:10: warning: variable ‘n’ set but not used [-Wunused-but-set-variable]

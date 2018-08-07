@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGButton.cxx: In member function ‘virtual void TGCheckButton::DoRedraw()’:
+/var/www/htdocs/spell/root1/root/gui/gui/src/TGButton.cxx:1273:18: warning: variable ‘cw’ set but not used [-Wunused-but-set-variable]

@@ -1,0 +1,9 @@
+<form id="frmLogin" method="post" action="login_check.php">
+	<table border="0" cellpadding="0" cellspacing="0" width="75%" style="float:left">
+		<tr><td>Username:</td><td><input id="user" type="text" name="user" /></td></tr>
+		<tr><td>Password:</td><td><input id="pass" type="password" name="pass" /></td></tr>
+	</table>
+	<div style="float:left;margin:2px 0 0 2px">
+		<input type="Submit" value="Login"  style="width:40px;height:18px;font-weight:bold;background:#e1e1db;border:1px solid #c7c7cc; text-align: center; margin: 8px 0px 0px 0px; cursor: pointer" />
+	</div>
+</form>

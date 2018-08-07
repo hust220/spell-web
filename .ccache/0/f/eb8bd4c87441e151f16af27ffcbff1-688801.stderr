@@ -1,0 +1,2 @@
+cint/cint/src/new.cxx: In function ‘int G__getarrayindex(const char*)’:
+cint/cint/src/new.cxx:697:8: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]

@@ -1,0 +1,2 @@
+/var/www/htdocs/spell/root1/root/gui/ged/src/TPieEditor.cxx: In member function ‘virtual void TPieEditor::SetModel(TObject*)’:
+/var/www/htdocs/spell/root1/root/gui/ged/src/TPieEditor.cxx:191:9: warning: variable ‘optionSame’ set but not used [-Wunused-but-set-variable]

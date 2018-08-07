@@ -1,0 +1,6 @@
+/var/www/htdocs/spell/root1/root/math/matrix/src/TMatrixTSparse.cxx: In member function ‘TMatrixTBase<Element>& TMatrixTSparse<Element>::ResizeTo(Int_t, Int_t, Int_t, Int_t, Int_t) [with Element = float, Int_t = int]’:
+/var/www/htdocs/spell/root1/root/math/matrix/src/TMatrixTSparse.cxx:2762:16:   instantiated from here
+/var/www/htdocs/spell/root1/root/math/matrix/src/TMatrixTSparse.cxx:1661:14: warning: variable ‘cont’ set but not used [-Wunused-but-set-variable]
+/var/www/htdocs/spell/root1/root/math/matrix/src/TMatrixTSparse.cxx: In member function ‘TMatrixTBase<Element>& TMatrixTSparse<Element>::ResizeTo(Int_t, Int_t, Int_t, Int_t, Int_t) [with Element = double, Int_t = int]’:
+/var/www/htdocs/spell/root1/root/math/matrix/src/TMatrixTSparse.cxx:2800:16:   instantiated from here
+/var/www/htdocs/spell/root1/root/math/matrix/src/TMatrixTSparse.cxx:1661:14: warning: variable ‘cont’ set but not used [-Wunused-but-set-variable]

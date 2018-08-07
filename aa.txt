@@ -1,0 +1,37 @@
+./style/js/spell.jquery.js:					url: "http://redshift.med.unc.edu/spell/checkpdb.php",
+./style/js/spell.jquery.js:			url: 'http://redshift.med.unc.edu/spell/doajaxfileupload.php',
+./style/js/spell.jquery.js:                    url: 'http://redshift.med.unc.edu/spell/alnfileupload.php',
+./style/js/spell.jquery.js:										jobstatusstr += '<a href="http://redshift.med.unc.edu//spell/showresults.php?jobid='+data.jobid+'&authKey='+data.authKey+'" target="_blank">http://redshift.med.unc.edu//spell/showresults.php?jobid='+data.jobid+'&authKey='+data.authKey+'</a></br></br>';
+./style/js/spell.jquery.js:		, url:      "http://redshift.med.unc.edu/chiron/ajaxClient.php"
+./style/js/spell.jquery.js:						$('#summary_download').attr('href','http://redshift.med.unc.edu//chiron/forcedownload.php?fname='+prefix+'-summary.pdf');
+./style/js/spell.jquery.js:						$('#full_download').attr('href','http://redshift.med.unc.edu//chiron/forcedownload.php?fname='+prefix+'-full.pdf');
+./style/js/spell.jquery.js:						$('#session_download').attr('href','http://redshift.med.unc.edu//chiron/forcedownload.php?fname='+prefix+'-session.py');
+./style/js/spell.jquery.js:							window.location.replace('http://redshift.med.unc.edu//chiron/forcedownload.php?fname='+prefix+'-phipsi.pdf');
+./style/js/spell.jquery.js:						//attr('href','http://redshift.med.unc.edu//chiron/forcedownload.php?fname='+prefix+'-ramaplot.png');
+./style/js/spell.jquery.js:		, url :     "http://redshift.med.unc.edu/chiron/forcedownload.php"
+./style/js/spell.jquery.js:		$('#dialog-results').html("<img src='style/img/running.gif' width=15 height=15 border=0>Please be patient while the side chains are fixed. Alternately, you can copy the following link to access the pdb file when it is ready.<br>http://redshift.med.unc.edu//chiron/forcedownload.php?fname=exec/"+prefixstr+"/"+prefixstr+"-fixed.pdb");
+./style/js/spell.jquery.js:			url: "http://redshift.med.unc.edu/chiron/ajaxClient.php",
+./style/js/spell.jquery.js:							window.location.replace('http://redshift.med.unc.edu//chiron/forcedownload.php?fname='+data.outfile);
+./style/js/spell.jquery.js:			url: "http://redshift.med.unc.edu/chiron/ajaxClient.php",
+./style/js/spell.jquery.js:										jobstatusstr += "http://redshift.med.unc.edu/chiron/showresults.php?jobid="+data.jobid+"&authKey="+data.authKey+"</br></br>";
+./txt/head.txt:		  @import url("http://redshift.med.unc.edu/spell/style/js/jQueryUI/themes/custom-theme/jquery.ui.all.css");
+./txt/head.txt:    <script src="http://redshift.med.unc.edu/spell/style/js/login.js" language="javascript" type="text/javascript"></script>
+./txt/head.txt:    <script src="http://redshift.med.unc.edu/spell/style/js/query.js" language="javascript" type="text/javascript"></script>
+./txt/head.txt:    <script src="http://redshift.med.unc.edu/spell/style/js/jetpack.js" language="javascript" type="text/javascript"></script>
+./txt/head.txt:    <script src="http://redshift.med.unc.edu/spell/style/js/lytebox.js" language="javascript" type="text/javascript"></script>
+./txt/head.txt:    <script src="http://redshift.med.unc.edu/spell/style/js/jquery-1.4.2.min.js" language="javascript" type="text/javascript"></script>
+./txt/head.txt:    <script src="http://redshift.med.unc.edu/spell/style/js/jtip.js" language="javascript" type="text/javascript"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/external/jquery.bgiframe-2.1.1.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.core.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.widget.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.mouse.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.position.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.selectable.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.dialog.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.tabs.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jQueryUI/ui/jquery.ui.accordion.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/spell.jquery.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/ajaxfileupload.js"></script>
+./txt/head.txt:	 <script type="text/javascript" language="javascript" src="http://redshift.med.unc.edu/spell/style/js/jquery.form.js"></script>
+./txt/head.txt:		<!--<div style="float:left"><img src="http://redshift.med.unc.edu/spell/style/img/head.jpg" alt="Eris" border="0" /></div>
+

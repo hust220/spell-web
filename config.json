@@ -1,0 +1,12 @@
+{
+  "host": "http://47.251.1.191",
+
+  "db": {
+    "host": "localhost",
+    "user": "dokhlab_svc",
+    "password": "second-S3cr3t",
+    "database": "dokhlab"
+  }
+}
+
+

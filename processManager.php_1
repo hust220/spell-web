@@ -1,0 +1,47 @@
+<?php
+require('config/config.inc.php');
+if (empty($_SESSION['username'])) {
+  header("Location: login.php");
+}
+print "<html>";
+include("txt/head.txt");
+?>
+        <div id="content">
+                <?
+                   echo '<div id="nav">';
+                   include("txt/menu.php");
+                   echo "</div>";
+                ?>
+
+                <div id="main_content">
+                        <form id="jobform" enctype="multipart/form-data" action="filter.php" method="POST" autocomplete="off">
+                         <fieldset><legend align=center>Input Data</legend>
+
+
+                     <div class="cdiv">
+		     <div class="ldiv">Input Structure :</div>
+		     <div class="rdiv"><input id=rpdb class=radio type=radio name=inptype value=pdb align=middle>PDB ID&nbsp;&nbsp;<input id=rfile class=radio type=radio name=inptype value=file align=middle>File</div>
+                     </div>
+
+                     <div class="cdiv">
+                     <div class="ldiv"></div>
+                     <div class="rdiv" id="pdbinfo"></div>
+                     </div>
+
+
+                     <div class="cdiv" id="filediv">
+                     <div class="ldiv">Choose File :</div>
+                     <div class="rdiv"><input type=file name=uploadedpdb value="" id=file><img id="uploading" style="display: none;" width="15px" height="15px" align="middle" src="style/img/running.gif" border="0px" /></div>
+                     </div>
+
+                     <div class="cdiv">
+                     <div class="ldiv"></div>
+                     <div class="rdiv" id="fileinfo"></div>
+                     </div>
+                 
+
+                         </fieldset>
+                        </form>
+
+                </div>
+        </div>

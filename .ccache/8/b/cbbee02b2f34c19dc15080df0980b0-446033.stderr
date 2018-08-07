@@ -1,0 +1,2 @@
+cint/cint/src/pragma.cxx: In function ‘void G__do_not_include()’:
+cint/cint/src/pragma.cxx:134:7: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]

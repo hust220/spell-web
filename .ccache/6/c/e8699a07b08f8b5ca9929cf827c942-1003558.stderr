@@ -1,0 +1,15 @@
+cint/cint/src/newlink.cxx: In function ‘void G__cppif_dummyobj(FILE*, G__ifunc_table_internal*, int, int)’:
+cint/cint/src/newlink.cxx:5101:11: warning: variable ‘ispointer’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/newlink.cxx:5083:9: warning: variable ‘globalfunc’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/newlink.cxx: In function ‘void G__make_default_ifunc(G__ifunc_table_internal*)’:
+cint/cint/src/newlink.cxx:5149:7: warning: variable ‘virtualdtorflag’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/newlink.cxx: In function ‘void G__cppif_memfunc(FILE*, FILE*)’:
+cint/cint/src/newlink.cxx:5437:35: warning: variable ‘ifunc_default’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/newlink.cxx: In function ‘void G__cppif_gendefault(FILE*, FILE*, int, int, G__ifunc_table_internal*, int, int, int, int, int)’:
+cint/cint/src/newlink.cxx:7332:9: warning: variable ‘isdestdefined’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/newlink.cxx: In function ‘void G__cpplink_memfunc(FILE*)’:
+cint/cint/src/newlink.cxx:9356:35: warning: variable ‘ifunc_destructor’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/newlink.cxx: In function ‘void G__specify_link(int)’:
+cint/cint/src/newlink.cxx:12023:7: warning: variable ‘rfNoMap’ set but not used [-Wunused-but-set-variable]
+cint/cint/src/newlink.cxx: In function ‘void G__specify_extra_include()’:
+cint/cint/src/newlink.cxx:13704:8: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
